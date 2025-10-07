@@ -107,7 +107,7 @@ def make_categorical_pipeline():
     from sklearn.preprocessing import OneHotEncoder
     return Pipeline([
         ("imputer", SimpleImputer(strategy="most_frequent")),
-        ("ohe", OneHotEncoder(handle_unknown="ignore", sparse=False)),
+        ("ohe", OneHotEncoder(handle_unknown="ignore", sparse_output=False)),
     ])
 
 def fit_transform(pre, X: pd.DataFrame, X_test: pd.DataFrame):
