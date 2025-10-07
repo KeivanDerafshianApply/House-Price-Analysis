@@ -99,16 +99,28 @@ If you’re using the included synthetic dataset, you’ll get a full working de
 ---
 
 ## 🧮 Dataset
-If you want to reproduce the full analysis with the **real Kaggle data**, download it from:  
-👉 [House Prices: Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data)
 
-Place these two files in the `data/` folder:
+This project uses the official dataset from the Kaggle competition:  
+👉 [**House Prices: Advanced Regression Techniques**](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data)
+
+The dataset contains detailed information about residential properties in Ames, Iowa — including attributes such as living area, lot size, overall quality, construction year, and many more.
+
+### 📂 Files used
+You can find these two CSV files inside the `data/` folder:
 ```
-train.csv
-test.csv
+data/
+├─ train.csv      # 1,460 observations with target variable (SalePrice)
+└─ test.csv       # 1,459 observations for prediction
 ```
 
-If not available, the project automatically generates a small **synthetic dataset** (`train_synthetic.csv`, `test_synthetic.csv`) that mimics the original structure — so all notebooks still run perfectly.
+### 📊 Description
+- **train.csv** — used for training and evaluation; includes the target variable `SalePrice`.  
+- **test.csv** — contains similar features but without `SalePrice`, used for generating final predictions.  
+- **data_description.txt** (optional, from Kaggle) — provides metadata and feature definitions.
+
+### 🧠 Note
+The project is configured to automatically read these real Kaggle files, so no synthetic data generation is needed.  
+All notebooks (`01_load_and_clean.ipynb`, `02_eda.ipynb`, `03_modeling.ipynb`, and `House_Prices_End_to_End.ipynb`) will now use the authentic dataset by default.
 
 ---
 
